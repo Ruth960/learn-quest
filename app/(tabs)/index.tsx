@@ -1,30 +1,28 @@
-import { Image, StyleSheet, SafeAreaView } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-
+// app/(tabs)/index.tsx
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import Header from '@/components/home/Header';
 import HeroSection from '@/components/home/HeroSection';
 import Progress from '@/components/home/Progress';
-
+import LeaderboardSnippet from '@/components/home/LeaderboardSnippet';
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Header/>
-      <HeroSection/>
-      <Progress/>
-
+      <ScrollView>
+        <Header />
+        <HeroSection />
+        <Progress />
+        <LeaderboardSnippet />
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-   container: {
+  container: {
+    flex: 1,
     padding: 10,
-    margin:10,
-    backgroundColor:'rgb(238, 238, 247)',
-    height: '100%',
-    },
- 
+    margin: 10,
+    backgroundColor: 'rgb(238, 238, 247)',
+  },
 });

@@ -1,3 +1,4 @@
+// app/(tabs)/_layout.tsx
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
@@ -8,6 +9,8 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import Entypo from '@expo/vector-icons/Entypo';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -34,20 +37,28 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
-       <Tabs.Screen
+      <Tabs.Screen
         name="learning"
         options={{
           title: 'Learn',
-          tabBarIcon: ({ color }) => <Entypo name="open-book" size={24} color="white" />,
+          tabBarIcon: ({ color }) => <Entypo name="open-book" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="leaderboard"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color='white' />,
+          title: 'Leaderboard',
+          tabBarIcon: ({ color }) =><MaterialIcons name="leaderboard" size={24} color={color}  />,
         }}
       />
+      <Tabs.Screen
+        name="rewards"
+        options={{
+          title: 'Rewards',
+          tabBarIcon: ({ color }) => <FontAwesome5 name="medal" size={22} color={color} />,
+        }}
+      />
+      
     </Tabs>
   );
 }
