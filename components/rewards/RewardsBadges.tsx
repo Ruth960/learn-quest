@@ -3,8 +3,14 @@ import React from 'react';
 export default function RewardsBagdes(){
 
     return(
-        <View>
-            <Text>Badges</Text>
+        <View style={styles.container}>
+            <Text >Badges</Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 10,
+    }
+})
